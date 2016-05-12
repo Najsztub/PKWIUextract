@@ -14,3 +14,6 @@ drop if regexm(symbol, "[a-z]")
 * Zamian działu na nr.
 replace dzial = regexs(0) if regexm(dzial, "[0-9]+")
 destring dzial, replace
+
+* Tylko ostateczne kategorie
+keep if length(symbol) == 10
