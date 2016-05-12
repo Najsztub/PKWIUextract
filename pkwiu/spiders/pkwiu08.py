@@ -36,7 +36,8 @@ class Pkwiu08Spider(CrawlSpider):
             item['dzial_name'] = dzial_name
 
             row = [r.xpath('string()').extract() for r in res.xpath('.//td')]
-
+            if row[1][0] == "Nazwa grupowania":
+                continue
             item['symbol'] = row[0][0]
     
             item['opis'] = row[1][0]
